@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" type="text/css" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Ping coming soon page</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <!--  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style> -->
+  </head>
+  <body>
+    <main class="main">
+      <div class="header">
+        <img src="images/logo.svg" alt="Ping logo" class="header__image" />
+        <h1 class="header__title">
+          We are launching <span class="title--bold">soon!</span>
+        </h1>
+      </div>
+
+      <div class="inputs">
+        <h3 class="inputs__title">Subscribe and get notified</h3>
+        <input
+          type="text"
+          placeholder="Your email address..."
+          class="inputs__field"
+          id="field"
+          autocomplete="off"
+        />
+
+        <button class="inputs__button" id="button">Notify Me</button>
+        <p id="state" class="state"></p>
+      </div>
+      <!---------------------------->
+      <div class="wrapper">
+        <img
+          src="images/illustration-dashboard.png"
+          alt="Ping dashboard"
+          class="wrapper__image"
+        />
+      </div>
+    </main>
+    <!---------------------------->
+    <footer class="footer">
+      <div class="footer__icons">
+        <i class="fab fa-facebook-f"></i>
+        <i class="fab fa-twitter"></i>
+        <i class="fab fa-instagram"></i>
+      </div>
+      <p class="footer__paragraph">
+        &copy; Copyright Ping. All rights reserved.
+      </p>
+    </footer>
+    <!--  <footer>
+      <p class="attribution">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by <a href="#">Your Name Here</a>.
+      </p>
+    </footer> -->
+
+    <!---------------------------->
+
+    <script
+      src="https://kit.fontawesome.com/be4d2a3c47.js"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      let button, input, state;
+
+      button = document.getElementById("button");
+
+      button.addEventListener("click", () => {
+        input = document.getElementById("field");
+        state = document.getElementById("state");
+        //Added a regular expression(thanks google!)
+        const reg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
+        if (reg.test(input.value)) {
+          state.classList.add("success");
+          input.classList.add("success");
+          state.textContent = "Thank you for subscribing :)";
+        } else {
+          state.classList.add("error");
+          input.classList.add("error");
+          state.textContent = "Ooooops please chek your email again";
+        }
+      });
+    </script>
+  </body>
+</html>

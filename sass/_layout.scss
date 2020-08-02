@@ -1,0 +1,101 @@
+.main {
+  width: 100%;
+  padding: 2rem;
+}
+
+.header {
+  &__image {
+    margin: 4rem 0;
+  }
+  &__title {
+    font-size: 2.4rem;
+  }
+}
+.inputs {
+  width: 90%;
+  margin: 0 auto;
+  margin-bottom: 8rem;
+  /* margin: 0 auto 8rem auto; */
+
+  &__title {
+    margin-bottom: 3rem;
+  }
+  &__field {
+    margin-bottom: 1rem;
+  }
+  &__field,
+  &__button {
+    display: block;
+    width: 100%;
+  }
+  .state {
+    font-style: italic;
+    width: 100%;
+    margin-top: 2rem;
+    border-radius: 0.5rem;
+
+    padding: 1rem 0;
+    font-size: 1.3rem;
+  }
+  .success {
+    background: rgba($secondary-success, 0.2);
+    border: 1px solid $secondary-success;
+  }
+  .error {
+    background: rgba($secondary-error, 0.2);
+    border: 1px solid $secondary-error;
+  }
+}
+
+.wrapper {
+  width: 100%;
+
+  margin: 0 auto;
+  margin-bottom: 8rem;
+
+  &__image {
+    width: 100%;
+  }
+}
+
+.footer {
+  padding-bottom: 2rem;
+  &__icons {
+    font-size: 2rem;
+    margin-bottom: 3rem;
+  }
+}
+@media (min-width: 40rem) {
+  body {
+    font-size: 1.5rem;
+  }
+  .main {
+    max-width: 96rem;
+    width: 90%;
+    margin: 0 auto;
+  }
+  .header {
+    &__title {
+      font-size: 5rem;
+    }
+  }
+
+  .inputs {
+    &__field,
+    &__button {
+      display: inline-block;
+    }
+    &__field {
+      max-width: 35rem;
+    }
+    &__button {
+      width: 20rem;
+      margin-left: 1.5rem;
+    }
+  }
+
+  .wrapper {
+    width: 70%;
+    margin: 0 auto 6rem auto;
+  }
+}
